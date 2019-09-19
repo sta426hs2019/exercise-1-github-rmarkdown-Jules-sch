@@ -1,0 +1,31 @@
+---
+title: "Week 1 Exercise Part b)"
+author: "Julian Schmocker"
+date: "19 9 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 1b)
+
+### First part
+
+First we take 100 samples from a lognormal distribution and plot the histogram of the distribution and the distribution on the log scale.
+
+```{r a}
+set.seed(123)
+par(mfrow= c(1,2))
+
+x <- rlnorm(100, meanlog = 1, sdlog = .25)
+
+hist(x, breaks = 15, main = "Histogram of sample")
+hist(log(x), breaks = 15, main = "Histogram of sample - on log-scale")
+
+```
+
+### Second part
+
+The mean of the sample is `r mean(x)` and the variance of the sample is `r var(x)`.
